@@ -1,5 +1,0 @@
-Programos vykdymo laikas su vektoriais: 0.00822715 s
-Programos vykdymo laikas su vektoriais: 0.0351304 s
-Programos vykdymo laikas su vektoriais: 0.229233 s
-Programos vykdymo laikas su vektoriais: 2.2712 s
-Programos vykdymo laikas su vektoriais: 22.2557 s
