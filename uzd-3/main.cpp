@@ -30,18 +30,18 @@ int main()
 
 		if (galbal == "1")
 		{
-			for (auto i : Student)
+			for(auto i = 0; i != Student.size(); i++)
 			{
-				auto vid = vidurkis(i.egzaminas_get(), i.pazymiai_get());
-				i.Set_gal_bal(vid);
+				auto vid = vidurkis(Student[i].egzaminas_get(), Student[i].pazymiai_get());
+				Student[i].Set_gal_bal(vid);
 			}
 		}
 		else if (galbal == "2")
 		{
-			for (auto i : Student)
+			for (auto i = 0; i != Student.size(); i++)
 			{
-				auto med = mediana(i.egzaminas_get(), i.pazymiai_get());
-				i.Set_gal_bal(med);
+				auto med = mediana(Student[i].egzaminas_get(), Student[i].pazymiai_get());
+				Student[i].Set_gal_bal(med);
 			}
 		}
 
