@@ -36,7 +36,7 @@ private:
 
 public:
 
-	//Studentai() : egzaminas(0), galutinis_balas(0) {}
+	Studentai() : egzaminas(0), galutinis_balas(0) {}
 
 	void Set_gal_bal(double x)
 	{
@@ -50,6 +50,7 @@ public:
 	inline std::vector<double> pazymiai_get() const { return pazymiai; }
 	inline double galutinis_get() const { return galutinis_balas; }
 	void nuskaityti(std::istream &fd);
+
 };
 
 

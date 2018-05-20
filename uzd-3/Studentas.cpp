@@ -1,12 +1,15 @@
 #include "Struktura.h"
 #include "Funkcijos.h"
 
+
+
+
 void Studentai::nuskaityti(std::istream &fd)
 {
 	fd >> Vardas >> Pavarde;
-	auto kiekis = 5;
+
 	double x;
-	for (int i = 0; i < kiekis; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		fd >> x;
 		pazymiai.push_back(x);
@@ -35,16 +38,16 @@ bool vargsiukai_atranka(Studentai &Student)
 	return Student.galutinis_get() < 6;
 }
 
-double vidurkis(std::vector <double> pazymiai)
+double vidurkis(double egzaminas, std::vector <double> pazymiai)
 {
-	double suma = 0;
+	auto suma = egzaminas;
 	double vidurkis;
 
 	for (size_t i = 0; i < pazymiai.size(); i++)
 	{
 		suma = suma + pazymiai[i];
 	}
-	vidurkis = suma / pazymiai.size();
+	vidurkis = suma / pazymiai.size() + 1;
 
 	return vidurkis;
 }
@@ -62,3 +65,5 @@ double mediana(double egzaminas, std::vector<double> pazymiai)
 	return mediana;
 
 }
+
+

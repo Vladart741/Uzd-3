@@ -1,6 +1,9 @@
 #include "Funkcijos.h"
 #include "Struktura.h"
 
+// O1_O2_main.cpp  
+// compile with: /O1 
+
 int main()
 {
 	std::string pav;
@@ -29,10 +32,8 @@ int main()
 		{
 			for (auto i : Student)
 			{
-				auto vid = vidurkis(i.pazymiai_get());
-				auto egzaminas = i.egzaminas_get();
-				auto end = vid * 0.4 + egzaminas * 0.6;
-				i.Set_gal_bal(end);
+				auto vid = vidurkis(i.egzaminas_get(), i.pazymiai_get());
+				i.Set_gal_bal(vid);
 			}
 		}
 		else if (galbal == "2")
@@ -44,6 +45,7 @@ int main()
 			}
 		}
 
+		
 		
 		Sortas(Student);
 

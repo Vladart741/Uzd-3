@@ -4,7 +4,7 @@
 #define FUNKCIJOS_H
 
 void Failu_Generatorius(std::string pav, int n);
-double vidurkis(std::vector <double> pazymiai);
+double vidurkis(double egzaminas, std::vector <double> pazymiai);
 double mediana(double egzaminas, std::vector<double> pazymiai);
 void Sortas(std::vector<Studentai> &Student);
 bool vargsiukai_atranka(Studentai &Student);
