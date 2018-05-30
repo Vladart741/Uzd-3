@@ -31,11 +31,21 @@ void Sortas(std::vector<Studentai> &Student)
 
 bool kietiakai_atranka(Studentai &Student)
 {
-	return Student.galutinis_get() >= 6;
+	if (Student.galutinis_get() >= 6)
+	{
+		return false;
+	}
+	else
+		return true;
 }
 bool vargsiukai_atranka(Studentai &Student)
 {
-	return Student.galutinis_get() < 6;
+	if (Student.galutinis_get() < 6)
+	{
+		return false;
+	}
+	else
+		return true;
 }
 
 double vidurkis(double egzaminas, std::vector <double> pazymiai)
@@ -57,13 +67,31 @@ double mediana(double egzaminas, std::vector<double> pazymiai)
 	std::vector<double> kazkas = pazymiai;
 	kazkas.push_back(egzaminas);
 	std::sort(kazkas.begin(), kazkas.end());
-	if (kazkas.size() % 2 == 0) {
+	if (kazkas.size() % 2 == 0) 
+	{
 		mediana = (kazkas[kazkas.size() / 2 - 1] + kazkas[kazkas.size() / 2]) / 2;
 	}
-	else mediana = kazkas[kazkas.size() / 2];
-
+	else
+	{
+		mediana = kazkas[kazkas.size() / 2];
+	}
 	return mediana;
 
 }
 
+// OPERATORIAI
+ 
+	bool operator+(const Studentai &Student, const Studentai &Student2) {
+		return Student.galutinis_get() + Student2.galutinis_get();
+	}
+	bool operator-(const Studentai &Student, const Studentai &Student2) {
+		return Student.galutinis_get() - Student2.galutinis_get();
+	}
 
+	bool operator<(const Studentai &Student, const Studentai &Student2) {
+		return Student.galutinis_get() < Student2.galutinis_get();
+	}
+	bool operator>(const Studentai &Student, const Studentai &Student2) {
+		return Student.galutinis_get() > Student2.galutinis_get();
+	}
+	

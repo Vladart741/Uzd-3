@@ -1,10 +1,30 @@
 #include "Funkcijos.h"
 #include "Struktura.h"
+#include <gtest/gtest.h>
 
-// O1_O2_main.cpp  
-// compile with: /O1 
+TEST(auto, Vidurkio_testas)
+{
+	std::vector<double>kazkas;
+	for (int i = 5; i < 10; i++)
+	{
+		kazkas.push_back(i);
+	}
+	auto vid = vidurkis(10, kazkas);
 
-int main()
+	EXPECT_EQ(7.5, vid);
+}
+TEST(auto, Medianos_testas)
+{
+	std::vector<double>kazkas;
+	for (int i = 5; i < 10; i++)
+	{
+		kazkas.push_back(i);
+	}
+	auto med = mediana(10, kazkas);
+	EXPECT_EQ(7.5, med);
+}
+
+int main(int argc, char* argv[])
 {
 	std::string pav;
 	int n;
@@ -30,18 +50,18 @@ int main()
 
 		if (galbal == "1")
 		{
-			for (auto i : Student)
+			for(auto i = 0; i != Student.size(); i++)
 			{
-				auto vid = vidurkis(i.egzaminas_get(), i.pazymiai_get());
-				i.Set_gal_bal(vid);
+				auto vid = vidurkis(Student[i].egzaminas_get(), Student[i].pazymiai_get());
+				Student[i].Set_gal_bal(vid);
 			}
 		}
 		else if (galbal == "2")
 		{
-			for (auto i : Student)
+			for (auto i = 0; i != Student.size(); i++)
 			{
-				auto med = mediana(i.egzaminas_get(), i.pazymiai_get());
-				i.Set_gal_bal(med);
+				auto med = mediana(Student[i].egzaminas_get(), Student[i].pazymiai_get());
+				Student[i].Set_gal_bal(med);
 			}
 		}
 
@@ -59,9 +79,11 @@ int main()
 		std::cout << "Programos vykdymo laikas su vektoriais: " << elapsed1.count() << " s\n";
 		Spausdinimas(Kietiakai, Vargsiukai);
 
-		system("pause");
+		
 	
-
+		testing::InitGoogleTest(&argc, argv);
+		return RUN_ALL_TESTS();
+		system("pause");
 
 
 	return 0;

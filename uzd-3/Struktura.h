@@ -51,6 +51,11 @@ public:
 	inline double galutinis_get() const { return galutinis_balas; }
 	void nuskaityti(std::istream &fd);
 
+	friend bool operator+(const Studentai &Student, const Studentai &Student2);
+	friend bool operator-(const Studentai &Student, const Studentai &Student2);
+	friend bool operator<(const Studentai &Student, const Studentai &Student2);
+	friend bool operator>(const Studentai &Student, const Studentai &Student2);
+
 };
 
 
