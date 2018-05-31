@@ -15,11 +15,7 @@
 {
 std::string Vardas;
 std::string Pavarde;
-double nd1;
-double nd2;
-double nd3;
-double nd4;
-double nd5;
+std::vector<double>pazymiai;
 double egzaminas;
 double galutinis_vidurkis;
 double galutinis_mediana;
@@ -44,11 +40,11 @@ public:
 	}
 
 	
-	inline std::string vardas_get() const { return Vardas; }
-	inline std::string pavarde_get() const { return Pavarde; }
-	inline double egzaminas_get() const { return egzaminas; }
-	inline std::vector<double> pazymiai_get() const { return pazymiai; }
-	inline double galutinis_get() const { return galutinis_balas; }
+	std::string vardas_get() const { return Vardas; }
+	std::string pavarde_get() const { return Pavarde; }
+	double egzaminas_get() const { return egzaminas; }
+	std::vector<double> pazymiai_get() const { return pazymiai; }
+	double galutinis_get() const { return galutinis_balas; }
 	void nuskaityti(std::istream &fd);
 
 	friend bool operator+(const Studentai &Student, const Studentai &Student2);
