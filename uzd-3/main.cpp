@@ -38,7 +38,8 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 		std::cout << "Sugeneruota sekmingai." << std::endl;
 		std::cout << std::endl;
-
+		
+		start:
 		std::cout << "Vidurkis(1) ar mediana(2)?" << std::endl;
 		std::string galbal;
 		std::cin >> galbal;
@@ -64,8 +65,10 @@ int main(int argc, char* argv[])
 				Student[i].Set_gal_bal(med);
 			}
 		}
-
-		
+		else
+		{
+			goto start;
+		}		
 		
 		Sortas(Student);
 
