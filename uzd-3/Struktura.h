@@ -26,9 +26,10 @@ class Zmogus
 protected:
 	std::string Vardas;
 	std::string Pavarde;
-	Zmogus(std::string v,std::string p) : Vardas(v), Pavarde(p) {}
+	
 
 public:
+	Zmogus(std::string v,std::string p) : Vardas(v), Pavarde(p) {}
 	virtual std::string vardas_get() const { return Vardas; }
 	virtual std::string pavarde_get() const { return Pavarde; }
 };
