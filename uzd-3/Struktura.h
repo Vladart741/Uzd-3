@@ -21,11 +21,17 @@ double galutinis_vidurkis;
 double galutinis_mediana;
 };*/
 
-class Studentai
+class Zmogus
 {
-private:
+protected:
 	std::string Vardas;
 	std::string Pavarde;
+};
+
+
+class Studentai : public Zmogus
+{
+private:
 	double egzaminas;
 	std::vector<double>pazymiai;
 	double galutinis_balas;
