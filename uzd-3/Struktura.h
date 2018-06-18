@@ -26,6 +26,11 @@ class Zmogus
 protected:
 	std::string Vardas;
 	std::string Pavarde;
+	Zmogus(std::string v) : Vardas(v), Pavarde(v) {}
+
+public:
+	//virtual std::string vardas_get() const { return Vardas; }
+	//virtual std::string pavarde_get() const { return Pavarde; }
 };
 
 
@@ -38,7 +43,7 @@ private:
 
 public:
 
-	Studentai() : egzaminas(0), galutinis_balas(0) {}
+	Studentai() : egzaminas(0), galutinis_balas(0), Zmogus("v") {}
 
 	void Set_gal_bal(double x)
 	{
